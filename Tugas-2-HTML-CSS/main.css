@@ -1,0 +1,33 @@
+.biodata {  
+    margin-left:10px;
+    border: 3px solid #fc0069;
+    text-align: center;
+}
+
+.foto{
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    background-image: url(/images/179945.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.datadiri h2{
+    font-size: 25 px;
+    margin-bottom: 0px;
+}
+
+.datadiri{
+    margin-left: 10px;
+}
+
+.datadiri p{
+    font-size: 20px;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
