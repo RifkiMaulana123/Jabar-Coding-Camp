@@ -52,7 +52,7 @@ for (var n = 0; n < 7; n++) {
 }
 console.log(hasil);
 
-//Soal 3
+//Soal 4
 kata1 = "programming"
 kata2 = "Javascript"
 kata3 = "VueJS"
@@ -61,7 +61,7 @@ for (var i = 1; i <= m; i++) {
     if (i % 3 == 1){
       console.log(i + " - I love " + kata1);
     }
-    else if (i % 2 == 0){
+    else if (i % 3 == 2){
       console.log(i + " - I love " + kata2)
     }
     else if (i % 3 == 0) {
