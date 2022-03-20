@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <name>Quiz 2</name>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <form v-on:submit.p revent="addUser">
+            <input v-model="newUsers" id="new-user" placeholder="Masukkan Nama">
+            <button>Add</button>
+        </form>
+        <ul>
+            <li is="user-item" v-for="(user, index) in users" v-bind:key="user.id" v-bind:name="user.name"
+                v-on:remove="users.splice(index, 1)">
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        Vue.component('user-item', {
+            template: '\
+    <li>\
+      {{ name }}\
+      <button v-on:click="$emit(\'remove\')">Hapus</button> ||\
+      <button v-on:click="$emit(\'edit\')">Edit</button>\
+    </li>\
+  ',
+            props: ['name']
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                newUsers: '',
+                users: [
+                    {
+                        name: 'Muhammad Iqbal Mubarok',
+                    },
+                    {
+                        name: 'Ruby Purwanti',
+                    },
+                    {
+                        name: 'Faqih Muhammad'
+                    }
+                ],
+            },
+            methods: {
+                addUser: function () {
+                    this.users.push({
+                        name: this.newUsers
+                    })
+                    this.newUsers = ''
+                },
+            }
+        })
+    </script>
+
+</body>
+
+</html>
